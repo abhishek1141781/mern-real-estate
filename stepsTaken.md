@@ -58,7 +58,25 @@ apply base classes of tailwind css in index.css
         small and above : w-64
     
 
-# 7. 
+# 7. create backend server
+
+    init json file in project root for 'render' platform to detect while deploying
+
+    npm i express
+
+    node index.js
+
+
+    Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+
+    Add this to package.json
+        "type": "module",
+
+    npm i nodemon
+
+    mv .git ../ to move git from inside client folder to the root project folder: AMAZING
+
+    
 
 
 
