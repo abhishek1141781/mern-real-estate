@@ -85,6 +85,11 @@ apply base classes of tailwind css in index.css
     npm i dotenv
 
 
+# 9. create user model
+
+    
+
+
 
 
 
