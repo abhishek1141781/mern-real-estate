@@ -76,7 +76,13 @@ apply base classes of tailwind css in index.css
 
     mv .git ../ to move git from inside client folder to the root project folder: AMAZING
 
-    
+# 8. connect to database
+
+    npm i mongoose
+
+    abhishek1141mernrealestate
+
+    npm i dotenv
 
 
 
