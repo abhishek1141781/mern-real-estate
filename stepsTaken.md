@@ -87,6 +87,11 @@ apply base classes of tailwind css in index.css
 
 # 9. create user model
 
+
+
+
+# 10. create a test api route
+
     
 
 
