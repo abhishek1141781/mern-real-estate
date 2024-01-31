@@ -92,9 +92,15 @@ apply base classes of tailwind css in index.css
 
 # 10. create a test api route
 
-    
 
 
+# 11. create a signup api route
+
+    npm i bcryptjs
+
+
+
+# 12. create a middle ware and a function to handle errors
 
 
 
