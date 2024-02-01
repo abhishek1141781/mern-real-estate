@@ -102,7 +102,20 @@ apply base classes of tailwind css in index.css
 
 # 12. create a middle ware and a function to handle errors
 
+      return res.status(statusCode).json({
+        success: false,
+        statusCode: statusCode,
+        messgage: messgage,
+      })
 
+    after ES6, if key and value are same then can be written as this also, it's correct
+      return res.status(statusCode).json({
+        success: false,
+        statusCode,
+        messgage,
+      })
+
+# 13. 
 
 
 
