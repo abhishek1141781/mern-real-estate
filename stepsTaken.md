@@ -204,6 +204,9 @@ apply base classes of tailwind css in index.css
 ```
 
 
+#    const { password: pass, ...rest} = validUserDetail._doc;
+
+    So, in summary, this line of code extracts the password property from the validUserDetail._doc object and assigns it to a variable called pass. It then collects any other properties of validUserDetail._doc into a new object called rest. This can be useful, for example, if you need to handle the password separately from the rest of the user details.
 
 
 
@@ -215,7 +218,9 @@ apply base classes of tailwind css in index.css
 
 
 
-# 16. 
+# 16. complete singin page functionlity
+
+
 
 
 
