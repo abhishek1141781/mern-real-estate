@@ -162,3 +162,118 @@ apply base classes of tailwind css in index.css
         message: "E11000 duplicate key error collection: realEstateCluster.users index: userName_1 dup key: { userName: null }"
         statusCode: 500
         success: false
+
+
+# 15. create signin api route
+
+    authenticate the user if both email and password is correct:
+        add a cookie inside the users browser
+        create a hashed token that contains the email of the user and save it as a cookie in the browser
+
+    for authentication
+        npm i jsonwebtoken 
+
+
+
+```log
+    MongooseServerSelectionError: connect ETIMEDOUT 
+    13.200.184.169:27017
+        at _handleConnectionErrors (C:\Users\abhis\Desktop\Project\VVIMP Projects Guthub\Private Github Uploads\RealEstate MERN\node_modules\mongoose\lib\connection.js:829:11)
+        at NativeConnection.openUri (C:\Users\abhis\Desktop\Project\VVIMP Projects Guthub\Private Github Uploads\RealEstate MERN\node_modules\mongoose\lib\connection.js:804:11)
+        at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+      reason: TopologyDescription {
+        type: 'ReplicaSetNoPrimary',
+        servers: Map(3) {
+          'ac-iwox5tm-shard-00-02.pvrelsx.mongodb.net:27017' => [ServerDescription],
+          'ac-iwox5tm-shard-00-00.pvrelsx.mongodb.net:27017' => [ServerDescription],
+          'ac-iwox5tm-shard-00-01.pvrelsx.mongodb.net:27017' => [ServerDescription]
+        },
+        stale: false,
+        compatible: true,
+        heartbeatFrequencyMS: 10000,
+        localThresholdMS: 15,
+        setName: 'atlas-ktr4jn-shard-0',
+        maxElectionId: null,
+        maxSetVersion: null,
+        commonWireVersion: 0,
+        logicalSessionTimeoutMinutes: 30
+      },
+      code: undefined
+    }
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 16. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
