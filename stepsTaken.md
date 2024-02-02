@@ -163,7 +163,6 @@ apply base classes of tailwind css in index.css
         statusCode: 500
         success: false
 
-
 # 15. create signin api route
 
     authenticate the user if both email and password is correct:
@@ -171,12 +170,10 @@ apply base classes of tailwind css in index.css
         create a hashed token that contains the email of the user and save it as a cookie in the browser
 
     for authentication
-        npm i jsonwebtoken 
-
-
+        npm i jsonwebtoken
 
 ```log
-    MongooseServerSelectionError: connect ETIMEDOUT 
+    MongooseServerSelectionError: connect ETIMEDOUT
     13.200.184.169:27017
         at _handleConnectionErrors (C:\Users\abhis\Desktop\Project\VVIMP Projects Guthub\Private Github Uploads\RealEstate MERN\node_modules\mongoose\lib\connection.js:829:11)
         at NativeConnection.openUri (C:\Users\abhis\Desktop\Project\VVIMP Projects Guthub\Private Github Uploads\RealEstate MERN\node_modules\mongoose\lib\connection.js:804:11)
@@ -203,59 +200,25 @@ apply base classes of tailwind css in index.css
 
 ```
 
-
-#    const { password: pass, ...rest} = validUserDetail._doc;
+# const { password: pass, ...rest} = validUserDetail.\_doc;
 
     So, in summary, this line of code extracts the password property from the validUserDetail._doc object and assigns it to a variable called pass. It then collects any other properties of validUserDetail._doc into a new object called rest. This can be useful, for example, if you need to handle the password separately from the rest of the user details.
 
-
-
-
-
-
-
-
-
-
-
 # 16. complete singin page functionlity
 
+# 17. add redux toolkit
+
+    npm install @reduxjs/toolkit
+    npm install react-redux
+
+# 18. add redux persist to not lose state if page reloaded
+
+    npm i redux-persist
+
+    user details not getting persisted in google Chrome, but it's good in Brave
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 19. 
 
 
 
