@@ -217,31 +217,6 @@ apply base classes of tailwind css in index.css
 
     user details not getting persisted in google Chrome, but it's good in Brave
 
+# 19. Add google oauth component
 
-# 19. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    npm i firebase
