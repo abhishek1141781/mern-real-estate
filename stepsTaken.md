@@ -225,3 +225,15 @@ apply base classes of tailwind css in index.css
     Then if a new user signs in, error is encountered and null is set in localstorage along with the error that no username was encountered
 
 # 20. Update header and make profile page private
+
+
+# 21. Complete profile page UI
+
+
+# 22. 
+
+
+# 23.
+
+
+# 24.
