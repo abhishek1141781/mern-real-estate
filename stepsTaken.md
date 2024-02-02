@@ -230,7 +230,7 @@ apply base classes of tailwind css in index.css
 # 21. Complete profile page UI
 
 
-# 22. 
+# 22. complete image upload functionality
 
 
 # 23.
