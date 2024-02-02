@@ -220,3 +220,8 @@ apply base classes of tailwind css in index.css
 # 19. Add google oauth component
 
     npm i firebase
+
+    If a user is already signed in and it's details are already set in localstorage
+    Then if a new user signs in, error is encountered and null is set in localstorage along with the error that no username was encountered
+
+# 20. Update header and make profile page private
