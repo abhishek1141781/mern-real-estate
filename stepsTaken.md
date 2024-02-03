@@ -247,3 +247,6 @@ apply base classes of tailwind css in index.css
 # 24. complete update user functionality
 
 # 25. delete user functionality
+
+# 26. add signout user functionality
+
