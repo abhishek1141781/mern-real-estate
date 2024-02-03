@@ -226,14 +226,20 @@ apply base classes of tailwind css in index.css
 
 # 20. Update header and make profile page private
 
-
 # 21. Complete profile page UI
-
 
 # 22. complete image upload functionality
 
+# 23.create update user API route
 
-# 23.
+    npm i cookie-parser
 
+    error occured while testing update user api, even though upon checking the mongo db, I saw that the username changed successfully
+
+    {
+    "success": false,
+    "statusCode": 500,
+    "message": "Cannot destructure property 'password' of 'updateUser._doc' as it is undefined."
+    }
 
 # 24.
