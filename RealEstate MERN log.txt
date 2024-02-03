@@ -11,3 +11,15 @@ Easy configuration:
 Vite has a simpler configuration than CRA, making it easier to get started. Vite does not require any configuration to get started, and it has sensible defaults that work for most use cases.
 Overall, Vite is a great choice for React developers who are looking for a fast, lightweight, and easy-to-use build tool
 
+General GPT: https://chat.openai.com/c/af30555d-a1de-4a8d-8451-669669ce24eb
+Using Vite instead of create-react-app
+Tailwind CSS
+
+Difference between bootstrap and tailwind CSS vs chakra UI vs material UI
+https://www.youtube.com/watch?v=HFr4h7WD6Hc&pp=ygURaGFya2lyYXQgdGFpbHdpbmQ%3D
+
+Exact steps to execute project
+1. create pages and routes
+2. 
+
+https://www.geeksforgeeks.org/what-is-memoization-a-complete-tutorial/

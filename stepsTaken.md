@@ -253,3 +253,11 @@ apply base classes of tailwind css in index.css
 # 27. add create listing api route
 
 # 28. complete create listing page UI
+
+# 29. completed upload listing images functionality
+
+# 30.
+
+# 31.
+
+# 32.
