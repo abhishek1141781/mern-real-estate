@@ -250,3 +250,4 @@ apply base classes of tailwind css in index.css
 
 # 26. add signout user functionality
 
+# 27. add create listing api route
