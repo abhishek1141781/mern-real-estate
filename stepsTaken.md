@@ -245,3 +245,5 @@ apply base classes of tailwind css in index.css
     'updateUser._doc' = > updatedUser._doc
 
 # 24. complete update user functionality
+
+# 25. delete user functionality
