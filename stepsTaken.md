@@ -242,4 +242,6 @@ apply base classes of tailwind css in index.css
     "message": "Cannot destructure property 'password' of 'updateUser._doc' as it is undefined."
     }
 
-# 24.
+    'updateUser._doc' = > updatedUser._doc
+
+# 24. complete update user functionality
