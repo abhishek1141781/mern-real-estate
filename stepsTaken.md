@@ -256,7 +256,7 @@ apply base classes of tailwind css in index.css
 
 # 29. completed upload listing images functionality
 
-# 30.
+# 30. completed create Listing page functionality
 
 # 31.
 
