@@ -258,6 +258,6 @@ apply base classes of tailwind css in index.css
 
 # 30. completed create Listing page functionality
 
-# 31.
+# 31. created getUserListing Api route
 
 # 32.
