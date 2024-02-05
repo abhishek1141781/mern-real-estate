@@ -299,15 +299,18 @@ apply base classes of tailwind css in index.css
 ```
 
 # How i fixed it
+
 ```js
-      const res = await fetch(
-        `/api/listing/get/${listingId}`
-        // `http://localhost:5173/api/listing/get/${listingId}`
-      );
+const res = await fetch(
+  `/api/listing/get/${listingId}`
+  // `http://localhost:5173/api/listing/get/${listingId}`
+);
 ```
 
 once i used explicit url to check first if the api is working and it was alright so then i changed it back to original as u can see and it worked, puzzling really!!?
 
-# 36 . added image slider to lsiting page
+# 36. added image slider to lsiting page
 
     npm i swiper
+
+# 38. complete lsiting page
