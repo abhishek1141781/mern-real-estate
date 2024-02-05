@@ -266,6 +266,44 @@ apply base classes of tailwind css in index.css
 
 # 34. creaeted update listing api route
 
-# 35.
+# 35. completed upddate listing api route
 
-# 36.
+    unable to get data to populate the create/update listing form
+    Uncaught (in promise) SyntaxError: Unexpected token '<', "<!doctype "... is not valid JSON
+
+```js
+  useEffect(() => {
+    const fetchListing = async () => {
+      const listingId = params.listingId;
+
+    // the below url would send request to the backedn like this
+      const res = await fetch(`api/listing/get/${listingId}`);
+    // which get's converted like this automatically
+      const res = await fetch(`http://localhost:5173/api/listing/get/${listingId}`);
+    // but somehow when i logged data on console is saw something like this, it was causing incoming res to be like xml instead of json
+      **http://localhost:5173/update-listing/api/listing/get/${listingId}**
+
+      const data = await res.json();
+
+      if (data.success === false) {
+        console.log(data.message);
+        return;
+      }
+      setFormData(data);
+    };
+
+// this is the line causing the error
+    fetchListing();
+  }, []);
+
+```
+
+# How i fixed it
+```js
+      const res = await fetch(
+        `/api/listing/get/${listingId}`
+        // `http://localhost:5173/api/listing/get/${listingId}`
+      );
+```
+
+once i used explicit url to check first if the api is working and it was alright so then i changed it back to original as u can see and it worked, puzzling really!!?
