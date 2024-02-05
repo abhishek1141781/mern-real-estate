@@ -307,3 +307,7 @@ apply base classes of tailwind css in index.css
 ```
 
 once i used explicit url to check first if the api is working and it was alright so then i changed it back to original as u can see and it worked, puzzling really!!?
+
+# 36 . added image slider to lsiting page
+
+    npm i swiper
