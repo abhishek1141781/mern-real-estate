@@ -262,7 +262,7 @@ apply base classes of tailwind css in index.css
 
 # 32. completed show user listings functionality
 
-# 33. 
+# 33. completed delete user listings functionality
 
 # 34. 
 
