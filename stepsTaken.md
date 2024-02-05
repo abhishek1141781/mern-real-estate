@@ -264,10 +264,8 @@ apply base classes of tailwind css in index.css
 
 # 33. completed delete user listings functionality
 
-# 34. 
+# 34. creaeted update listing api route
 
 # 35.
 
 # 36.
-
-
