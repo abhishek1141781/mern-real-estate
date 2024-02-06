@@ -322,3 +322,8 @@ once i used explicit url to check first if the api is working and it was alright
 # 40. created search Page UI
 
 # 41. completed search page API logic
+
+# 42. created listing item component and showed listings
+
+  npm i -D @tailwindcss/line-clamp
+
