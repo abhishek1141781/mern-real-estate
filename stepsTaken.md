@@ -319,4 +319,6 @@ once i used explicit url to check first if the api is working and it was alright
 
 # 39. completed headerSearch functionality
 
-# 40. **created search Page UI**
+# 40. created search Page UI
+
+# 41. completed search page API logic
