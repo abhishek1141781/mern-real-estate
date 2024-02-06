@@ -314,3 +314,5 @@ once i used explicit url to check first if the api is working and it was alright
     npm i swiper
 
 # 37. complete lsiting page and ContactLandlord
+
+# 38. created search API route
