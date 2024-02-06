@@ -316,3 +316,6 @@ once i used explicit url to check first if the api is working and it was alright
 # 37. complete lsiting page and ContactLandlord
 
 # 38. created search API route
+
+# 39. completed headerSearch functionality
+
