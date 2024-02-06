@@ -313,4 +313,4 @@ once i used explicit url to check first if the api is working and it was alright
 
     npm i swiper
 
-# 38. complete lsiting page
+# 37. complete lsiting page and ContactLandlord
