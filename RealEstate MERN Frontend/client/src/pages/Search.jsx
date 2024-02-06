@@ -54,13 +54,13 @@ export default function Search() {
 
     const fetchListings = async () => {
       setLoading(true);
-      setShowmore(false)
+      setShowmore(false);
       const searchQuery = urlParams.toString();
       const res = await fetch(`/api/listing/get?${searchQuery}`);
       const data = await res.json();
-      if (data.length > 8)
-        setShowmore(true);
-      // else
+      if (data.length > 9) setShowmore(true);
+      // else setShowmore(false);
+
       setListings(data);
       setLoading(false);
     };
@@ -230,7 +230,7 @@ export default function Search() {
       </div>
       <div className="flex-1">
         <h1 className="text-3xl font-semibold border-b p-3 text-slate-700 mt-5">
-          Listing Results:
+          Listing Results: ({listings.length})
         </h1>
         <div className="p-7 flex flex-wrap gap-4">
           {!loading && listings.length === 0 && (

@@ -329,4 +329,6 @@ npm i -D @tailwindcss/line-clamp
 
 # 43. add show more listings functionality
 
+# 44. completed home page
 
+# 45.
