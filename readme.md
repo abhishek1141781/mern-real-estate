@@ -1,4 +1,4 @@
-JavaScript & React
+# JavaScript & React
 
     🔑Advanced Authentication: Implement JWT, Firebase, and Google OAuth for secure and seamless user access.
     🏡 Real-world CRUD Operations: Create, read, update, and delete property listings using MongoDB.
@@ -7,10 +7,12 @@ JavaScript & React
     🌐 Deployment Made Easy: Learn to deploy your MERN real estate app for free using the 'render' platform.
 
 
+# React Router Dom: Create routes and dynamic pages
+# Authentication: Both email and password authentication by JWT along with google OAuth integration
+# State Management: Redux toolkit (management of global states easier)
+# Secure User experience: user profile page will be protected on both client and backend side
+# Image slider
+# Render platform: to deploy the application
 
-React Router Dom: Create routes and dynamic pages
-Authentication: Both email and password authentication by JWT along with google OAuth integration
-State Management: Redux toolkit (management of global states easier)
-Secure User experience: user profile page will be protected on both client and backend side
-Image slider: 
-render platform: to deploy the application
+### Original Code Credit: Sahand Ghavidel
+### Github link: https://github.com/sahandghavidel/mern-estate
