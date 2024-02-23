@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  resetPasswordStart,
+  resetPasswordSuccess,
   signInFailure,
-  signInStart,
-  signInSuccess,
 } from "../redux/user/userSlice";
 
 export default function ResetPassword() {
@@ -27,7 +27,7 @@ export default function ResetPassword() {
     e.preventDefault();
 
     try {
-      dispatch(signInStart());
+      dispatch(resetPasswordStart());
       const res = await fetch(`/api/auth/signin/reset-password/${id}/${token}`, {
         method: "POST",
         headers: {
@@ -45,7 +45,7 @@ export default function ResetPassword() {
         dispatch(signInFailure(data.message));
         return;
       }
-      dispatch(signInSuccess(data));
+      dispatch(resetPasswordSuccess());
       navigate("/profile");
     } catch (error) {
       dispatch(signInFailure(error.message));

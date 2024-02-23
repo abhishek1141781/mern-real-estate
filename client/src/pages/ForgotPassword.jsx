@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  forgotPasswordStart,
+  forgotPasswordSuccess,
   signInFailure,
-  signInStart,
-  signInSuccess,
 } from "../redux/user/userSlice";
 
 export default function ForgotPassword() {
@@ -26,7 +26,7 @@ export default function ForgotPassword() {
     e.preventDefault();
 
     try {
-      dispatch(signInStart());
+      dispatch(forgotPasswordStart());
       const res = await fetch("/api/auth/signin/forgot-password", {
         method: "POST",
         headers: {
@@ -42,7 +42,7 @@ export default function ForgotPassword() {
         dispatch(signInFailure(data.message));
         return;
       }
-      dispatch(signInSuccess(data));
+      dispatch(forgotPasswordSuccess());
       navigate("/");
     } catch (error) {
       dispatch(signInFailure(error.message));
