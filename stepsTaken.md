@@ -332,3 +332,22 @@ npm i -D @tailwindcss/line-clamp
 # 44. completed home page
 
 # 45.
+
+# 46. forgot password, password rest codewithyousaf
+
+    npm i nodemailer
+
+    npm i vite-plugin-rewrite-all
+    and in vite.config.js add this plugin to avoid the error due to `.` present in jwt token 
+    plugins: [react(),PluginRewriteAll()],
+
+    const { email } = req.body;
+    
+    The below code causes this: Hence use above line of code
+    const email = req.body;
+    Cast to string failed for value "{ email: 'abhishek1141781@gmail.com' }" (type Object) at path "email" for model "User"
+
+
+
+    bcryptjs.hashSync(...).then is not a function
+      trying to use hashSync() which is a synchronous function and thus it doen't return a promise for .then to be used on it, thus use bcryptjs.hash

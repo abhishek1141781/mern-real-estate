@@ -2,6 +2,7 @@ import User from "../models/user.model.js";
 import bcryptjs from "bcryptjs";
 import { errorHandler } from "../utils/error.js";
 import jwt from "jsonwebtoken";
+import nodemailer from "nodemailer";
 // import dotenv from "dotenv";
 
 // dotenv.config();
@@ -83,6 +84,86 @@ export const signout = async (req, res, next) => {
       .clearCookie("access_token")
       .status(200)
       .json("user has been logged out");
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const sendOtp = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+    // const email = req.body;
+    console.log(email);
+    const user = await User.findOne({ email: email });
+
+    // if user exists
+    if (!user) res.status(404).json("user email not found");
+
+    // const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET);
+
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "abhishek1141781@gmail.com",
+        pass: "whcdioadhynavyli",
+      },
+    });
+
+    var mailOptions = {
+      from: "abhishek1141781@gmail.com",
+      to: email,
+      subject: "Reset Your Password",
+      text: `http://localhost:5173/reset-password/${user._id}/${token}`,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+        var resp = info.response
+        return res.status(200).json({resp});
+      }
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const updatePassword = async (req, res, next) => {
+  try {
+    const { id, token } = req.params;
+    const { email, password, passwordConfirm } = req.body;
+
+    if (password !== passwordConfirm)
+      return res.status(401).json({
+        message: "Passwords do not match",
+        status: 401,
+        success: false
+    });
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+      if (err) {
+        return res.status(400).json("Bad password reset link");
+      } else {
+        bcryptjs
+          .hash(password, 10)
+          .then((hashedPass) => {
+            User.findByIdAndUpdate({ _id: id }, { password: hashedPass })
+              .then((u) =>
+                res.status(201).json("password updated successfully")
+              )
+              .catch((err) =>
+                res.status(400).json("error updating password in database")
+              );
+          })
+          .catch((err) =>
+            res.status(404).json("error creating hashed password")
+          );
+      }
+    });
   } catch (error) {
     next(error);
   }

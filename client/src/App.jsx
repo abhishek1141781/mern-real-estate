@@ -10,6 +10,8 @@ import CreateListing from "./pages/CreateListing";
 import UpdateListing from "./pages/UpdateListing";
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 export default function App() {
   return (
@@ -22,14 +24,14 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/listing/:listingId" element={<Listing />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:id/:token" element={<ResetPassword />} />
 
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-listing" element={<CreateListing />} />
-          <Route
-            path="/update-listing/:listingId"
-            element={<UpdateListing />}
-          />
+          <Route path="/profile/forgot-password" element={<ForgotPassword />} />
+          <Route path="/update-listing/:listingId" element={<UpdateListing />} />
         </Route>
       </Routes>
     </BrowserRouter>

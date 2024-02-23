@@ -30,6 +30,7 @@ export default function Profile() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
+  const [forgotPassword, setForgotPassword] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -70,6 +71,10 @@ export default function Profile() {
   const handleFormChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
+
+  // const handleForgotPassword = (e) => {
+  //   setForgotPassword(true);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -162,7 +167,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="p-3 max-w-lg mx-auto">
+    <div className="p-3 max-w-lg mx-auto background-color: inherit">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
@@ -208,12 +213,34 @@ export default function Profile() {
           className="border p-3 rounded-lg"
           onChange={handleFormChange}
         />
-        <input
+        {/* <label className="label">
+          <input
+            type="checkbox"
+            id="forgotPassword"
+            className="w-5"
+            onChange={(e) => setForgotPassword(e.target.checked)}
+            value={forgotPassword}
+          /> Forgot Password
+        </label> */}
+
+        <Link to="forgot-password">Forgot Password ?</Link>
+
+        {/* {forgotPassword && (
+          <input
+            type="password"
+            placeholder="password"
+            id="password"
+            className="border p-3 rounded-lg"
+          />
+        )} */}
+
+        {/* <input
           type="password"
           placeholder="password"
           id="password"
           className="border p-3 rounded-lg"
-        />
+        /> */}
+
         <button
           disabled={loading}
           className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"

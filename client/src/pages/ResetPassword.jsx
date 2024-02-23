@@ -1,21 +1,20 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   signInFailure,
   signInStart,
   signInSuccess,
 } from "../redux/user/userSlice";
-import OAuth from "../components/OAuth";
-// import {singInStart} frm
 
-export default function SignIn() {
+export default function ResetPassword() {
   const [formData, setFormData] = useState({});
 
   const { loading, error } = useSelector((state) => state.user);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const {id, token} = useParams();
 
   const handleChange = (e) => {
     setFormData({
@@ -29,7 +28,7 @@ export default function SignIn() {
 
     try {
       dispatch(signInStart());
-      const res = await fetch("/api/auth/signin", {
+      const res = await fetch(`/api/auth/signin/reset-password/${id}/${token}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,21 +46,21 @@ export default function SignIn() {
         return;
       }
       dispatch(signInSuccess(data));
-      navigate("/");
+      navigate("/profile");
     } catch (error) {
       dispatch(signInFailure(error.message));
-      console.log(error);
     }
-    // setLoading(false);
   };
 
   return (
     <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
+      <h1 className="text-3xl text-center font-semibold my-7">
+        Reset Password
+      </h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="email"
-          placeholder="email"
+          placeholder="enter registered email"
           className="border p-3 rounded-lg"
           id="email"
           onChange={handleChange}
@@ -73,16 +72,20 @@ export default function SignIn() {
           id="password"
           onChange={handleChange}
         />
-
-        <Link to="/forgot-password">Forgot Password ?</Link>
+        <input
+          type="password"
+          placeholder="Confirm password"
+          className="border p-3 rounded-lg"
+          id="passwordConfirm"
+          onChange={handleChange}
+        />
 
         <button
           disabled={loading}
-          className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
+          className="bg-green-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
         >
-          {loading ? "loading..." : "Sign In"}
+          {loading ? "loading..." : "Update Password"}
         </button>
-        <OAuth />
       </form>
       <div className="flex gap-2 mt-5">
         <p>Dont have an account?</p>
