@@ -28,7 +28,7 @@ export const signin = async (req, res, next) => {
     );
     if (!validPassword) return next(errorHandler(401, "Invalid password!"));
 
-    const token = jwt.sign({ id: validUserDetail._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: validUserDetail._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
     const { password: pass, ...rest } = validUserDetail._doc;
     res
       .cookie("access_token", token, { httpOnly: true })
@@ -43,7 +43,7 @@ export const google = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
       const { password: pass, ...rest } = user._doc;
       res
         .cookie("access_token", token, { httpOnly: true })
