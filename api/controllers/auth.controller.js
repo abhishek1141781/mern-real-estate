@@ -107,7 +107,7 @@ export const sendOtp = async (req, res, next) => {
       service: "gmail",
       auth: {
         user: "abhishek1141781@gmail.com",
-        pass: "whcdioadhynavyli",
+        pass: process.env.APP_EMAIL_PASSKEY,
       },
     });
 
