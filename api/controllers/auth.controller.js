@@ -8,6 +8,7 @@ export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
   const hashedPassword = bcryptjs.hashSync(password, 10);
   const newUser = new User({ username, email, password: hashedPassword });
+
   try {
     await newUser.save();
     res.status(201).json("User created from auth.controller.js !!!");
@@ -28,7 +29,11 @@ export const signin = async (req, res, next) => {
     );
     if (!validPassword) return next(errorHandler(401, "Invalid password!"));
 
-    const token = jwt.sign({ id: validUserDetail._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
+    const token = jwt.sign(
+      { id: validUserDetail._id },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
     const { password: pass, ...rest } = validUserDetail._doc;
     res
       .cookie("access_token", token, { httpOnly: true })
@@ -43,7 +48,9 @@ export const google = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1d" });
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+        expiresIn: "1h",
+      });
       const { password: pass, ...rest } = user._doc;
       res
         .cookie("access_token", token, { httpOnly: true })
@@ -91,6 +98,11 @@ export const sendOtp = async (req, res, next) => {
     const { email } = req.body;
     // const email = req.body;
     console.log(email);
+    // const host = window.location.hostname;
+    const host = req.get("host");
+
+    console.log(host);
+
     const user = await User.findOne({ email: email });
 
     // if user exists
@@ -111,8 +123,10 @@ export const sendOtp = async (req, res, next) => {
     var mailOptions = {
       from: "abhishek1141781@gmail.com",
       to: email,
-      subject: "Reset Your Password",
-      text: `http://localhost:5173/reset-password/${user._id}/${token}`,
+      subject: "Reset Your ThalEstate Password",
+      // text: `http://localhost:5173/reset-password/${user._id}/${token}`,
+      text: `Click the link to reset your password 
+      http://${host}/reset-password/${user._id}/${token}`,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
@@ -120,8 +134,8 @@ export const sendOtp = async (req, res, next) => {
         console.log(error);
       } else {
         console.log("Email sent: " + info.response);
-        var resp = info.response
-        return res.status(200).json({resp});
+        var resp = info.response;
+        return res.status(200).json({ resp });
       }
     });
   } catch (error) {
@@ -138,8 +152,8 @@ export const updatePassword = async (req, res, next) => {
       return res.status(401).json({
         message: "Passwords do not match",
         status: 401,
-        success: false
-    });
+        success: false,
+      });
 
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
       if (err) {
