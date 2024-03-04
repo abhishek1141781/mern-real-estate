@@ -14,5 +14,7 @@
 # Image slider
 # Render platform: to deploy the application
 
+
+## CREDITS
 ### Original Code Credit: Sahand Ghavidel
 ### Github link: https://github.com/sahandghavidel/mern-estate

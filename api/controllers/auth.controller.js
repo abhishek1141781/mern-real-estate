@@ -93,7 +93,7 @@ export const signout = async (req, res, next) => {
   }
 };
 
-export const sendOtp = async (req, res, next) => {
+export const resetPassword = async (req, res, next) => {
   try {
     const { email } = req.body;
     // const email = req.body;
@@ -101,7 +101,7 @@ export const sendOtp = async (req, res, next) => {
     // const host = window.location.hostname;
     const host = req.get("host");
 
-    console.log(host);
+    // console.log(host);
 
     const user = await User.findOne({ email: email });
 

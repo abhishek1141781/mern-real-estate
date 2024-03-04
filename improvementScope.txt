@@ -1,1 +1,3 @@
 if a user is logged in and he exits the application/browser and then he comes back and tries to loggout and login with another user, forget it he's unable to loggout as the update button is stuck on loading... . Oh wait a min, sign out works .damn it.
+
+Another issues, during development, i'm sending the user hardcoded reset password url and thus it has the hostname like localhost:5173, while it should be the hostname of the hosted url, hence it should be set dynamically using req.get('host')
